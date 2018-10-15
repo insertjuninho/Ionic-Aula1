@@ -1,3 +1,9 @@
+<!--
+  Generated template for the ProdutosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
 
   <ion-navbar>
@@ -8,25 +14,17 @@
 
 
 <ion-content padding>
-  <h3>NOME CATEGORIA</h3>
+
+  <h3>CATEGORIA</h3>
+
   <ion-list>
-      <ion-item>
+      <ion-item *ngFor="let p of produtos">
         <ion-thumbnail item-start>
-          <img src="https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/samsung/galaxy-s8/black/device-front.png.transform/pdpCarousel/image.jpg">
+          <img src="../../assets/imgs/{{p.image}}">
         </ion-thumbnail>
-        <h2>Smartphone S8</h2>
-        <p>Preço:R$3000,00</p>
-        <button ion-button clear item-end (click)="navProdutoDetalhe()">Visualizar</button>
+        <h2>{{p.nome}}</h2>
+        <p>R$:{{p.preco}}</p>
+        <button ion-button clear item-end (click)="navProdutoDetalhe(p)">Visualizar</button>
       </ion-item>
-
-      <ion-item>
-          <ion-thumbnail item-start>
-            <img src="https://images-americanas.b2w.io/spacey/2017/01/26/iphone.jpg">
-          </ion-thumbnail>
-          <h2>Iphone X</h2>
-          <p>Preço:R$10000,00</p>
-          <button ion-button clear item-end (click)="navProdutoDetalhe()">Visualizar</button>
-        </ion-item>
     </ion-list>
-
 </ion-content>
